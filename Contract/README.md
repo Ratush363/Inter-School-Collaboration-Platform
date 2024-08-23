@@ -1,76 +1,66 @@
-Inter-School Collaboration Platform
+# Inter-School Collaboration Platform - README.md
 
-This project is a basic Solidity smart contract designed to facilitate collaboration between educational institutions. The contract enables schools to propose joint projects, vote on proposals, share resources, and manage collaborations in a decentralized, transparent manner.
+![image](https://github.com/user-attachments/assets/0a0cf8d3-2aff-4615-9b88-9547640fa963)
 
-Features
-1. Collaboration Proposal System
-Propose a Collaboration: Schools can propose collaborative projects by submitting a description of the initiative.
-Vote on Proposals: Participating schools can vote on each proposal, choosing to support or reject it.
-Execute Proposals: Once voting is complete, proposals with more votes in favor than against can be executed.
-2. Resource Sharing
-Share Resources: Schools can share educational resources such as e-books, research papers, or course materials by registering them on the platform.
-Access Shared Resources: Authorized users can view and access details of the shared resources.
-3. Access Control
-Registered Schools Only: Only institutions that have been registered on the platform can propose, vote, or share resources. This ensures that only legitimate educational institutions can participate.
 
-Contract Details
-1. Proposal Struct
-id (uint256): Unique identifier for each proposal.
-proposer (address): Address of the school that proposed the collaboration.
-description (string): Description of the proposed collaboration.
-votesFor (uint256): Number of votes in favor of the proposal.
-votesAgainst (uint256): Number of votes against the proposal.
-executed (bool): Status indicating whether the proposal has been executed.
-2. Resource Struct
-name (string): Name of the shared resource.
-resourceURI (string): URI link to the resource, where it can be accessed or downloaded.
-owner (address): Address of the school that shared the resource.
-3. Functions
-proposeCollaboration(string memory _description)
-Allows a registered school to propose a new collaboration.
-Stores the proposal details on the blockchain.
-voteOnProposal(uint256 _proposalId, bool _support)
-Enables schools to vote on a proposal by providing the proposal ID and a boolean indicating support (true) or rejection (false).
-Each school can vote only once per proposal.
-executeProposal(uint256 _proposalId)
-Executes a proposal if it has more votes in favor than against.
-Marks the proposal as executed to prevent re-execution.
-shareResource(string memory _name, string memory _resourceURI)
-Allows a school to share a resource by providing its name and a URI link.
-getResource(uint256 _resourceId)
-Retrieves details of a specific resource by its ID, including the name, URI, and owner address.
-4. Modifiers
-onlySchool
-Restricts access to certain functions so that only registered schools can execute them.
+## Vision
 
-Example Usage
-Deploying the Contract
-Deploy the Contract: Deploy the smart contract on a compatible Ethereum network using Remix, Truffle, or Hardhat.
-Register Schools: In this example, two schools are pre-registered, but you can modify the constructor to add more.
-Proposing a Collaboration
-Call proposeCollaboration with a description of the proposed project.
-The proposal will be added to the list of active proposals.
-Voting on a Proposal
-Call voteOnProposal with the proposal ID and your vote (true for support, false for against).
-The vote will be recorded, and the proposal will be updated with the new vote count.
-Executing a Proposal
-Once voting is complete, call executeProposal with the proposal ID.
-If the proposal has more votes in favor, it will be executed, and marked as such.
-Sharing a Resource
-Call shareResource with the resource name and a URI link.
-The resource will be added to the list of shared resources.
-Retrieving a Resource
-Call getResource with the resource ID to view the resource details.
+The Inter-School Collaboration Platform is designed to foster seamless collaboration between educational institutions through the use of blockchain technology. This platform leverages smart contracts to allow schools to propose, vote on, and execute collaborative projects. Additionally, schools can share resources like research papers, study materials, and other educational content in a decentralized manner, ensuring transparency, security, and equal participation.
 
-Future Enhancements
-This contract is a basic model intended to demonstrate the foundational features of an Inter-School Collaboration Platform. Potential enhancements could include:
-Decentralized governance using DAOs.
-Milestone-based funding mechanisms.
-Conflict resolution and arbitration via smart contracts.
-Expansion of the resource sharing system to include access control via NFTs.
+## Flowchart
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+```plaintext
++------------------------+           +----------------------------+
+|                        |           |                            |
+|  Propose Collaboration +----------->  Proposals Stored in        |
+|                        |           |  Smart Contract            |
++------------------------+           +----------------------------+
+           |                                        |
+           |                                        |
+           v                                        v
++------------------------+           +----------------------------+
+|  Vote on Proposal      +----------->  Proposal Execution Based   |
+|                        |           |  on Votes                   |
++------------------------+           +----------------------------+
+           |                                        |
+           |                                        |
+           v                                        v
++------------------------+           +----------------------------+
+|  Share Resources       +----------->  Resources Accessible to    |
+|                        |           |  Registered Schools         |
++------------------------+           +----------------------------+
+```
 
-Contributing
-We welcome contributions to this project! Please open an issue or submit a pull request to contribute.
+## Smart Contract Overview
+
+The smart contract is written in Solidity and is deployed on the Ethereum blockchain. It provides the following functionalities:
+
+1. **Propose Collaboration**: Registered schools can propose new collaborative projects.
+2. **Vote on Proposal**: Schools can vote for or against a proposed collaboration.
+3. **Execute Proposal**: If a proposal receives more votes in favor than against, it can be executed.
+4. **Share Resource**: Schools can share educational resources with the community.
+5. **Get Resource**: Anyone can retrieve details about shared resources.
+
+### Contract Address
+
+The smart contract is deployed at the following address on the Ethereum blockchain:
+
+**Contract Address:** 0xfe2c9ae03fc41ba040b263da3932efb8fae417c7
+
+![image](https://github.com/user-attachments/assets/ad2b6586-f126-464d-a5f3-8320e7e482db)
+
+## Future Scope
+
+1. **Decentralized Governance**: Introduce voting power based on a school's reputation or contributions to the platform.
+2. **Resource Categorization**: Implement tagging and categorization for shared resources to enhance searchability.
+3. **Collaboration Metrics**: Develop analytics to measure the impact and success of collaborative projects.
+4. **Cross-Network Compatibility**: Extend the platform's functionality to other blockchain networks for broader adoption.
+
+## Contact Information
+
+For any inquiries, contributions, or feedback, please reach out:
+
+- **Developer:** Ratush Pandit
+- **Email:** ratush363@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/ratush-pandit-328555276/
+- **GitHub:** https://github.com/Ratush363
